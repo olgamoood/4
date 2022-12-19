@@ -1,0 +1,9 @@
+function translatePigLatin(str) {
+  if(str.match(/^[aeiou]/)){  //starts with vowel
+    return str.replace(/(.+)/,"$1way");
+  }else if(str.match(/[aeiou]/g)){ //starts with consonant or consonant cluster
+    return str.replace(/(^[^aeiou]+)(.+)/g,"$2$1ay");
+  }else{ //all consonants 
+    return str + "ay";
+  }
+}
